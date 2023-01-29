@@ -1,7 +1,7 @@
 import math
 from math import floor
 
-from src.constants import SUBPIXEL
+from constants import SUBPIXEL
 
 
 def sign(i):

@@ -1,7 +1,7 @@
 import random
 
 from constants import ORIGIN, PIXELS_PER_TILE, TARGET_FRAMERATE
-from src.animation import *
+from animation import *
 from utils import Point, Direction, sign
 import pygame
 # import scenes
