@@ -19,12 +19,12 @@ class GameManager:
 
         pygame.display.set_icon(icon)
         pygame.display.set_caption(screen_title)
-        self.screen = pygame.display.set_mode((self.screen_w, self.screen_h), pygame.RESIZABLE | pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((self.screen_w, self.screen_h), pygame.RESIZABLE)
 
         self.score = 0
 
     def run(self):
-        title_screen = scenes.TitleScreen(TITLE, self.font, self.screen.get_size())
+        title_screen = scenes.TitleScreen(TITLE, self.font, (self.screen_w, self.screen_h))
         if self.event_loop(title_screen) != scenes.TitleScreen.START_GAME:
             return
 
@@ -40,7 +40,7 @@ class GameManager:
                 elif result == scenes.Level.WON:
                     self.score = level.score + (current_level + 1) * floor(max((64 - level.turns) / 16, 0))
 
-            score_disp = scenes.TitleScreen(str(self.score), self.font, self.screen.get_size())
+            score_disp = scenes.TitleScreen(str(self.score), self.font, (self.screen_w, self.screen_h))
             if self.event_loop(score_disp) != scenes.TitleScreen.START_GAME:
                 return
             self.score = 0
