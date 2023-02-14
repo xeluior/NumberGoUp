@@ -5,8 +5,8 @@ import pygame
 import pygame.image
 
 from constants import FONT_SIZE
-from src.animation import AnimationController, Animation
-from src.constants import ORIGIN, PIXELS_PER_TILE
+from animation import AnimationController, Animation
+from constants import ORIGIN, PIXELS_PER_TILE
 from utils import *
 
 
