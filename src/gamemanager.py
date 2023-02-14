@@ -2,8 +2,8 @@ from math import floor
 
 import pygame
 import scenes
-import sprites
 from constants import *
+from sys import exit
 
 
 class GameManager:
