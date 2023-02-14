@@ -14,8 +14,8 @@ class GameManager:
 
         pygame.init()
 
-        self.font = pygame.font.Font('../resources/font/Pixeltype.ttf', FONT_SIZE)
-        icon = pygame.image.load('../resources/img/icon.png')
+        self.font = pygame.font.Font('resources/font/Pixeltype.ttf', FONT_SIZE)
+        icon = pygame.image.load('resources/img/icon.png')
 
         pygame.display.set_icon(icon)
         pygame.display.set_caption(screen_title)

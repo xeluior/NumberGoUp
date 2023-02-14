@@ -102,12 +102,12 @@ class Level(Scene):
         self.score = score
         self.score_hud = TextSprite(
             f'{self.score}',
-            pygame.font.Font('../resources/font/Pixeltype.ttf', FONT_SIZE),
+            pygame.font.Font('resources/font/Pixeltype.ttf', FONT_SIZE),
             'white',
             'topleft',
             (0, 0)
         )
-        wood = pygame.image.load('../resources/img/tiles/wood-floor.png').convert()
+        wood = pygame.image.load('resources/img/tiles/wood-floor.png').convert()
         self.background = pygame.Surface((wood.get_width() * 10, wood.get_height() * 10))
         for i in range(10):
             for j in range(10):
@@ -119,12 +119,12 @@ class Level(Scene):
 
             while location in [e.location for e in self._children]:
                 location = Point2D(random.randrange(8), random.randrange(8))
-            enemy = Enemy('../resources/img/sprites/goblin.png')
+            enemy = Enemy('resources/img/sprites/goblin.png')
             enemy.location = location
             self.add(enemy)
         self.multiplier_hud = TextSprite(
             f'x{self.player().multiplier}',
-            pygame.font.Font('../resources/font/Pixeltype.ttf', FONT_SIZE),
+            pygame.font.Font('resources/font/Pixeltype.ttf', FONT_SIZE),
             'white',
             'bottomleft'
         )
@@ -228,7 +228,7 @@ class Entity(Scene):
         super().__init__()
 
         self.image = pygame.image.load(image_path).convert_alpha()
-        self.shadow = pygame.image.load('../resources/img/sprites/1x1-shadow.png').convert_alpha()
+        self.shadow = pygame.image.load('resources/img/sprites/1x1-shadow.png').convert_alpha()
         self.multiplier = 1
         self.move_dir = Direction.ZERO
 
@@ -262,7 +262,7 @@ class Entity(Scene):
 
 class Player(Entity):
     def __init__(self):
-        super().__init__('../resources/img/sprites/player/front.png')
+        super().__init__('resources/img/sprites/player/front.png')
         self.location.x = 4
         self.location.y = 4
         self.turn = True
@@ -271,12 +271,12 @@ class Player(Entity):
         self.buffer: [pygame.Event] = []
         self.anim = AnimationController({
             'walk_down': Animation([
-                pygame.image.load('../resources/img/sprites/player/front2.png'),
-                pygame.image.load('../resources/img/sprites/player/front3.png'),
-                pygame.image.load('../resources/img/sprites/player/front4.png'),
-                pygame.image.load('../resources/img/sprites/player/front5.png'),
-                pygame.image.load('../resources/img/sprites/player/front6.png'),
-                pygame.image.load('../resources/img/sprites/player/front.png'),
+                pygame.image.load('resources/img/sprites/player/front2.png'),
+                pygame.image.load('resources/img/sprites/player/front3.png'),
+                pygame.image.load('resources/img/sprites/player/front4.png'),
+                pygame.image.load('resources/img/sprites/player/front5.png'),
+                pygame.image.load('resources/img/sprites/player/front6.png'),
+                pygame.image.load('resources/img/sprites/player/front.png'),
             ], framerate=20)
         }, 'walk_down')
 
